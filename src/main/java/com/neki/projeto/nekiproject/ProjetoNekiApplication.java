@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NekiprojectApplication {
+public class ProjetoNekiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NekiprojectApplication.class, args);
+		SpringApplication.run(ProjetoNekiApplication.class, args);
 	}
 
 }
