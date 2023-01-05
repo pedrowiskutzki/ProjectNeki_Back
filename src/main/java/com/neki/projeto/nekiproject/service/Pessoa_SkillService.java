@@ -80,8 +80,8 @@ public class Pessoa_SkillService {
 	}
 
 	private void copyDtoToEntity(Pessoa_Skill entity, Pessoa_SkillDTO Pessoa_SkillDTO)  {
-		entity.setPessoa_id(Pessoa_SkillDTO.getPessoa_id());
-		entity.setSkill_id(Pessoa_SkillDTO.getSkill_id());
+		entity.setPessoa(Pessoa_SkillDTO.getPessoa());
+		entity.setSkill(Pessoa_SkillDTO.getSkill());
 		entity.setKnowledge_level(Pessoa_SkillDTO.getKnowledge_level());
 		entity.setCreated_at(Pessoa_SkillDTO.getCreated_at());
 		entity.setUpdated_at(Pessoa_SkillDTO.getUpdated_at());

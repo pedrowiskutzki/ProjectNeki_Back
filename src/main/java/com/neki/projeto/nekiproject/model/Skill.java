@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Skill {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(nullable = false, length = 100)
@@ -27,6 +27,18 @@ public class Skill {
     @Column(length = 255)
     private String image_url;
     
+    public Skill() {
+    }
+
+    public Skill(Integer id, String name, String version, String description, String image_url) {
+        this.id = id;
+        this.name = name;
+        this.version = version;
+        this.description = description;
+        this.image_url = image_url;
+
+    }
+
 
     public Integer getId() {
         return this.id;

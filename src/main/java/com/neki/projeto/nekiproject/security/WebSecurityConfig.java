@@ -56,15 +56,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeRequests()
-            .antMatchers("/pessoa/login")
-            .permitAll()
+            // .antMatchers(HttpMethod.POST,  "/pessoa/login")
+            // .permitAll()
             /**
              * Daqui pra baixo declaramos as rotas que precisarão de autenticação
              */
             //│ HttpMethod.POST, "/Home", "/Calendario" │(codigo que entra dentro do parenteses do antMatchers)
              //Definir melhor o método(verbo) depois e as rotas que podem ser liberadas de autenticação
-            .antMatchers("/**").permitAll()
-             .anyRequest().permitAll();
+             .antMatchers(HttpMethod.POST,  "/pessoa/login", "/pessoa")
+            .permitAll()
+            
+            .anyRequest()
+            .authenticated();
              
              
 
