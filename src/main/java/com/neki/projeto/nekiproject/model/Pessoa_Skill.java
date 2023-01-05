@@ -25,19 +25,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Pessoa_Skill{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private Pessoa pessoa_id;
+    private Pessoa pessoa;
     
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "skill_id")
-    private Skill skill_id;
+    private Skill skill;
 
     @Column(nullable = false)
-    @NotBlank(message = "Insira o nivel de  1 a 10")
     private Integer knowledge_level;
 
     @Column(nullable = false)
@@ -59,20 +58,20 @@ public class Pessoa_Skill{
         this.id = id;
     }
 
-    public Pessoa getPessoa_id() {
-        return this.pessoa_id;
+    public Pessoa getPessoa() {
+        return this.pessoa;
     }
 
-    public void setPessoa_id(Pessoa pessoa_id) {
-        this.pessoa_id = pessoa_id;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
-    public Skill getSkill_id() {
-        return this.skill_id;
+    public Skill getSkill() {
+        return this.skill;
     }
 
-    public void setSkill_id(Skill skill_id) {
-        this.skill_id = skill_id;
+    public void setSkill(Skill skill) {
+        this.skill = skill;
     }
 
     public Integer getKnowledge_level() {
