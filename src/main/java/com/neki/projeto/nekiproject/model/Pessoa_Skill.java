@@ -1,6 +1,5 @@
 package com.neki.projeto.nekiproject.model;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -21,11 +21,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@SequenceGenerator(schema = "teste_residencia", name = "generator_user_skill", sequenceName = "user_skill_seq", initialValue = 100, allocationSize = 1)
 @Table(name = "user_skill" , schema = "teste_residencia" )
 public class Pessoa_Skill{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator_user_skill")
     private Integer id;
     
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
@@ -41,13 +42,13 @@ public class Pessoa_Skill{
 
     @Column(nullable = false)
     @CreationTimestamp
-    @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime created_at ;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private Date created_at ;
 
     @Column(nullable = true)
     @UpdateTimestamp
-    @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime updated_at ;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    private Date updated_at ;
 
 
     public Integer getId() {
@@ -82,19 +83,19 @@ public class Pessoa_Skill{
         this.knowledge_level = knowledge_level;
     }
 
-    public LocalDateTime getCreated_at() {
+    public Date getCreated_at() {
         return this.created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public Date getUpdated_at() {
         return this.updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
 
