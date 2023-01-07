@@ -1,7 +1,6 @@
 package com.neki.projeto.nekiproject.service;
 
 
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -13,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.neki.projeto.nekiproject.DTO.PessoaDTO;
-import com.neki.projeto.nekiproject.exception.ResourceBadRequestException;
 import com.neki.projeto.nekiproject.exception.ResourceNotFoundException;
 import com.neki.projeto.nekiproject.model.Pessoa;
 import com.neki.projeto.nekiproject.repository.PessoaRepository;

@@ -1,8 +1,0 @@
-DELETE      http://localhost:8017/centroEsportivo/81
-Content-Type: application/json
-
-{
-    "login": "jeferson",
-    "password": "321"
-      
-}

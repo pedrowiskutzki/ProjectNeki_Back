@@ -6,7 +6,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,15 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.neki.projeto.nekiproject.DTO.PessoaDTO;
 import com.neki.projeto.nekiproject.DTO.SkillDTO;
-import com.neki.projeto.nekiproject.model.Pessoa;
 import com.neki.projeto.nekiproject.model.Skill;
-import com.neki.projeto.nekiproject.service.LoginService;
-import com.neki.projeto.nekiproject.service.PessoaService;
 import com.neki.projeto.nekiproject.service.SkillService;
-import com.neki.projeto.nekiproject.view.model.pessoaLogin.LoginRequest;
-import com.neki.projeto.nekiproject.view.model.pessoaLogin.LoginResponse;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

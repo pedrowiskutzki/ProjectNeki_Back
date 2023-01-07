@@ -1,6 +1,6 @@
 package com.neki.projeto.nekiproject.DTO;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import com.neki.projeto.nekiproject.model.Pessoa;
 import com.neki.projeto.nekiproject.model.Pessoa_Skill;
@@ -12,8 +12,8 @@ public class Pessoa_SkillDTO {
     private Pessoa pessoa;
     private Skill skill;
     private Integer knowledge_level;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at ;
+    private Date created_at;
+    private Date updated_at ;
 
     public Pessoa_SkillDTO(){
 
@@ -23,8 +23,8 @@ public class Pessoa_SkillDTO {
         Pessoa pessoa,
         Skill skill,
         Integer knowledge_level,
-        LocalDateTime created_at,
-        LocalDateTime updated_at
+        Date created_at,
+        Date updated_at
     ){
         this.id = id;
         this.pessoa = pessoa;
@@ -76,19 +76,19 @@ public class Pessoa_SkillDTO {
         this.knowledge_level = knowledge_level;
     }
 
-    public LocalDateTime getCreated_at() {
+    public Date getCreated_at() {
         return this.created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public Date getUpdated_at() {
         return this.updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
 

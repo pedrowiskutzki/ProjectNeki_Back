@@ -2,8 +2,6 @@ package com.neki.projeto.nekiproject.DTO;
 
 import java.util.Date;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
 import com.neki.projeto.nekiproject.model.Pessoa;
 
 public class PessoaDTO {
