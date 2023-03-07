@@ -7,25 +7,25 @@ import com.neki.projeto.nekiproject.model.Pessoa_Skill;
 import com.neki.projeto.nekiproject.model.Skill;
 
 public class Pessoa_SkillDTO {
-    
+
     private Integer id;
     private Pessoa pessoa;
     private Skill skill;
     private Integer knowledge_level;
     private Date created_at;
-    private Date updated_at ;
+    private Date updated_at;
 
-    public Pessoa_SkillDTO(){
+    public Pessoa_SkillDTO() {
 
     }
+
     public Pessoa_SkillDTO(
-        Integer id,
-        Pessoa pessoa,
-        Skill skill,
-        Integer knowledge_level,
-        Date created_at,
-        Date updated_at
-    ){
+            Integer id,
+            Pessoa pessoa,
+            Skill skill,
+            Integer knowledge_level,
+            Date created_at,
+            Date updated_at) {
         this.id = id;
         this.pessoa = pessoa;
         this.skill = skill;
@@ -34,7 +34,7 @@ public class Pessoa_SkillDTO {
         this.updated_at = updated_at;
     }
 
-    public Pessoa_SkillDTO(Pessoa_Skill Pessoa_Skill){
+    public Pessoa_SkillDTO(Pessoa_Skill Pessoa_Skill) {
         id = Pessoa_Skill.getId();
         pessoa = Pessoa_Skill.getPessoa();
         skill = Pessoa_Skill.getSkill();
@@ -51,7 +51,7 @@ public class Pessoa_SkillDTO {
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     public Pessoa getPessoa() {
         return this.pessoa;
     }
@@ -91,6 +91,5 @@ public class Pessoa_SkillDTO {
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
-
 
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.neki.projeto.nekiproject.DTO.Pessoa_SkillDTO;
+import com.neki.projeto.nekiproject.DTO.UpdateLevel_PessoaSkillDTO;
 import com.neki.projeto.nekiproject.model.Pessoa_Skill;
 import com.neki.projeto.nekiproject.service.Pessoa_SkillService;
 
@@ -75,7 +76,7 @@ public class Pessoa_SkillController {
     Pessoa_SkillDTO dto = pessoa_skillService.cadastrar(pessoa_skill);
     URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
     return ResponseEntity.created(uri).body(dto);
-    
+
   }
 
   @PutMapping(value = "/{id}")
@@ -87,9 +88,25 @@ public class Pessoa_SkillController {
       @ApiResponse(code = 404, message = "Recurso não encontrado"),
       @ApiResponse(code = 505, message = "Exceção interna da aplicação"),
   })
-  public ResponseEntity<Pessoa_SkillDTO> atualizar(@Valid @PathVariable Integer id, @RequestBody Pessoa_SkillDTO pessoa_skillDTO) {
+  public ResponseEntity<Pessoa_SkillDTO> atualizar(@Valid @PathVariable Integer id,
+      @RequestBody Pessoa_SkillDTO pessoa_skillDTO) {
     pessoa_skillDTO = pessoa_skillService.atualizar(id, pessoa_skillDTO);
     return ResponseEntity.ok(pessoa_skillDTO);
+  }
+
+  @PutMapping(value = "/update_level/{id}")
+  @ApiOperation(value = "Altera dados da pessoa", notes = "Altera dados da pessoa")
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "Altera dados da pessoa"),
+      @ApiResponse(code = 401, message = "Erro de autenticação"),
+      @ApiResponse(code = 403, message = "Não há permissão para acessar o recurso"),
+      @ApiResponse(code = 404, message = "Recurso não encontrado"),
+      @ApiResponse(code = 505, message = "Exceção interna da aplicação"),
+  })
+  public ResponseEntity<UpdateLevel_PessoaSkillDTO> atualizar(@Valid @PathVariable Integer id,
+      @RequestBody UpdateLevel_PessoaSkillDTO updateLevel_PessoaSkillDTO) {
+    updateLevel_PessoaSkillDTO = pessoa_skillService.atualizar(id, updateLevel_PessoaSkillDTO);
+    return ResponseEntity.ok(updateLevel_PessoaSkillDTO);
   }
 
   @DeleteMapping(value = "/{id}")
@@ -105,6 +122,5 @@ public class Pessoa_SkillController {
     pessoa_skillService.deletar(id);
     return ResponseEntity.noContent().build();
   }
-
 
 }

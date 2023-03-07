@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,17 +21,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @SequenceGenerator(schema = "teste_residencia", name = "generator_user_skill", sequenceName = "user_skill_seq", initialValue = 100, allocationSize = 1)
-@Table(name = "user_skill" , schema = "teste_residencia" )
-public class Pessoa_Skill{
-    
+@Table(name = "user_skill", schema = "teste_residencia")
+public class Pessoa_Skill {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generator_user_skill")
     private Integer id;
-    
+
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private Pessoa pessoa;
-    
+
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "skill_id")
     private Skill skill;
@@ -43,13 +42,12 @@ public class Pessoa_Skill{
     @Column(nullable = false)
     @CreationTimestamp
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    private Date created_at ;
+    private Date created_at;
 
     @Column(nullable = true)
     @UpdateTimestamp
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-    private Date updated_at ;
-
+    private Date updated_at;
 
     public Integer getId() {
         return this.id;
@@ -100,4 +98,3 @@ public class Pessoa_Skill{
     }
 
 }
-
